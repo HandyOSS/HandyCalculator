@@ -1,0 +1,145 @@
+<html>
+<head>
+	<title>Handshake (HNS) GPU Mining Calculator</title>
+	<style>
+		@font-face {
+		  font-family: "IBM Plex Mono";
+		  font-weight: 400;
+		  src: url('../fonts/IBMPlexMono-Regular.ttf') format('truetype');
+		}
+		@font-face {
+		  font-family: "IBM Plex Mono";
+		  font-style: italic;
+		  font-weight: 600;
+		  src: url('../fonts/IBMPlexMono-SemiBoldItalic.ttf');
+		}
+		html,body{
+			padding:0;
+			margin:0;
+			font-family: IBM Plex Mono, Sans-serif;	
+			text-align:center;
+		}
+		#logoContainer{
+			width:80%;
+			clear:both;
+			margin: 0 auto;
+		}
+		#logo{
+			float:left;
+			width:150px;
+			padding:  5px 10px;
+			margin-top:4px;
+		}
+		.title{
+	    line-height: 45px;
+	    vertical-align: middle;
+	    margin-top: 19px;
+	    float: left;
+	    text-align: left;
+		}
+		#form{
+			clear:both;
+			width:80%;
+			margin:0 auto;
+			text-align:left;
+		}
+		.formElement{
+			padding: 5px;
+			margin:2px;
+			background:#eee;
+			border: 1px solid #ccc;
+		}
+		.formElement input{
+			clear:both;
+			display:block;
+			font-size:18px;
+			width:80px;
+			padding: 2px 5px;
+			font-family: IBM Plex Mono, Sans-serif;	
+		}
+		#output{
+			padding: 5px;
+			border: 1px solid #ccc;
+			background:#eee;
+			margin:2px;
+		}
+		#output span{
+			font-weight:600;
+		}
+		#guideLink{
+			width:calc(80% - 20px);
+			margin:5px auto;
+			text-align:right;
+
+		}
+		#guideLink a, a{
+			color:#00d24a;
+		}
+	</style>
+	<script src="js/gpu.js"></script>
+</head>
+<body onload="calculateForm();">
+	<div id="logoContainer">
+		<img id="logo" src="./img/handshake.svg" alt="Handshake" />
+		<span class="title">- GPU Mining Calculator | <a href="./index.html">ASIC ROI Calculator</a></span>
+	</div>
+	<div id="form">
+
+		<!-- <div class="formElement">
+			<label for="asicCount">Number of ASIC</label>
+			<input oninput="calculateForm();" id="asicCount" type="number" value="300" placeholder="number of asic" size="6" />
+		</div> -->	
+		<div class="formElement">
+			<label for="hwHashrate">Miner Hashrate (GH)</label>
+			<input oninput="calculateForm();" id="hwHashrate" type="number" value="10" />
+		</div>
+		<div class="formElement">
+			<label for="hwWattage">Miner Power Usage (W)</label>
+			<input oninput="calculateForm();" id="hwWattage" type="number" value="4000" />
+		</div>
+		<!-- <div class="formElement">
+			<label for="hwCost">Cost Per Miner (USD)</label>
+			<input oninput="calculateForm();" id="hwCost" type="number" value="2000" />
+		</div> -->
+		<div class="formElement">
+			<label for="kwhCost">Energy Cost Per kW/h (USD)</label>
+			<input oninput="calculateForm();" id="kwhCost" type="number" value="0.08" placeholder="cost of kW/h in $" />
+		</div>
+		<div class="formElement">
+			<label for="netHash">Network Hashrate (TH)</label>
+			<input oninput="calculateForm();" id="netHash" type="number" value="52" />
+		</div>
+		<div class="formElement">
+			<label for="hnsValue">Value of 1 HNS (USD)</label>
+			<input oninput="calculateForm();" id="hnsValue" type="number" value="0.18" />
+		</div>
+		
+		<div id="output">
+			<div id="hashratePerc">
+				My Hashrate: <span id="myHashrateOut"></span>GH (<span id="myHashratePercentOut"></span>%)
+			</div>
+			<div id="energyUsageDaily">
+				Daily Energy Usage (kW/h): <span id="powerUsageDailyOut"></span>
+			</div>
+			<div id="grossDailyIncome">
+				Gross Daily Income HNS: <span id="grossDailyIncomeHNSOut"></span><br />
+				Gross Daily Income USD: <span id="grossDailyIncomeUSDOut"></span>
+			</div>
+			<div id="energyCostDaily">
+				Daily Energy Cost USD: <span id="powerUsageDailyCostOut"></span>
+			</div>
+			<div id="netDailyIncome">
+				Net Daily Income USD: <span id="netDailyIncomeOut"></span>
+			</div>
+			<!-- <div id="roiDays">
+				ROI Days: <span id="roiDaysOut"></span>
+			</div> -->
+
+		</div>
+	</div>
+	<div id="guideLink">
+		<a href="https://handyminer.github.io/HandyGuide/">HandyMiner QuickStart Guide</a>
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+</body>	
+</html>
