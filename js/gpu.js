@@ -26,6 +26,6 @@ function calculateForm(){
 	document.getElementById('powerUsageDailyOut').textContent = numeral(energyUsePerDay).format('0,0.00');
 	document.getElementById('powerUsageDailyCostOut').textContent = numeral(energyCostPerDay).format('0,0.00');
 	document.getElementById('netDailyIncomeOut').textContent = numeral(netIncomeUSD).format('0,0.00');
-	document.getElementById('roiDaysOut').textContent = numeral(roiPeriod).format('0,0.00');
+	//document.getElementById('roiDaysOut').textContent = numeral(roiPeriod).format('0,0.00');
 
 }
