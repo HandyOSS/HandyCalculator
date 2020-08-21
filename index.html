@@ -91,7 +91,7 @@
 		</div>	
 		<div class="formElement">
 			<label for="hwHashrate">ASIC Hashrate (TH)</label>
-			<input oninput="calculateForm();" id="hwHashrate" type="number" value="0.085" />
+			<input oninput="calculateForm();" id="hwHashrate" type="number" value="0.085" step="0.01" />
 		</div>
 		<div class="formElement">
 			<label for="hwWattage">ASIC Power Usage (W)</label>
@@ -103,15 +103,15 @@
 		</div>
 		<div class="formElement">
 			<label for="kwhCost">Energy Cost Per kW/h (USD)</label>
-			<input oninput="calculateForm();" id="kwhCost" type="number" value="0.08" placeholder="cost of kW/h in $" />
+			<input oninput="calculateForm();" id="kwhCost" type="number" value="0.08" step="0.01" placeholder="cost of kW/h in $" />
 		</div>
 		<div class="formElement">
 			<label for="netHash">Expected Network Hashrate (TH) <small>(2000 asics @ 85GH = 170TH)</small></label>
-			<input oninput="calculateForm();" id="netHash" type="number" value="225" />
+			<input oninput="calculateForm();" id="netHash" type="number" value="1600" step="100" />
 		</div>
 		<div class="formElement">
 			<label for="hnsValue">Value of 1 HNS (USD)</label>
-			<input oninput="calculateForm();" id="hnsValue" type="number" value="0.18" />
+			<input oninput="calculateForm();" id="hnsValue" type="number" value="0.18" step="0.01" />
 		</div>
 		
 		<div id="output">
